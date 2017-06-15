@@ -1,0 +1,50 @@
+{
+    "language": "de",
+    "pipeline": [
+        "nlp_spacy",
+        "ner_crf",
+        "ner_synonyms",
+        "ner_duckling",
+        "intent_featurizer_spacy",
+        "intent_classifier_sklearn"
+    ],
+    "training_data": "training_data.json",
+    "spacy_model_name": "de",
+    "entity_extractor_crf": {
+        "model_file": "crf_model.pkl",
+        "crf_features": [
+            [
+                "low",
+                "title",
+                "upper",
+                "pos",
+                "pos2"
+            ],
+            [
+                "bias",
+                "low",
+                "word3",
+                "word2",
+                "upper",
+                "title",
+                "digit",
+                "pos",
+                "pos2"
+            ],
+            [
+                "low",
+                "title",
+                "upper",
+                "pos",
+                "pos2"
+            ]
+        ],
+        "BILOU_flag": true,
+        "version": 1
+    },
+    "entity_synonyms": "entity_synonyms.json",
+    "ner_duckling_persisted": "ner_duckling.json",
+    "intent_classifier_sklearn": "intent_classifier.pkl",
+    "trained_at": "20170606-173115",
+    "rasa_nlu_version": "0.9.0a2"
+}
